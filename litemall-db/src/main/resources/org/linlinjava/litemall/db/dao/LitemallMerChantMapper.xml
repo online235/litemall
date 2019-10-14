@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.linlinjava.litemall.db.dao.LitemallMerChantMapper">
+    <select id="findLitemallMerChant" resultType="org.linlinjava.litemall.db.domain.LitemallMerChant">
+        select id,username,phone,createdat from litemall_merchant where 1=1
+        <if test="username != null and username != ''">
+            and username = #{username}
+        </if>
+        <if test="phone != null and phone != ''">
+            and phone = #{phone}
+        </if>
+            ORDER BY createdat desc
+    </select>
+    <insert id="addLitemallMerChant" parameterType="org.linlinjava.litemall.db.domain.LitemallMerChant">
+        INSERT INTO litemall_merchant (
+              username,
+              phone,
+              createdat
+            )
+            VALUES
+              (
+        <if test="username != null and username != ''">
+                #{username},
+        </if>
+        <if test="phone != null and phone != ''">
+                #{phone},
+        </if>
+        <if test="createdat != null and createdat != ''">
+                #{createdat}
+        </if>
+  ) ;
+
+    </insert>
+    <update id="updLitemallMerChantByphone" parameterType="org.linlinjava.litemall.db.domain.LitemallMerChant">
+        UPDATE
+          litemall_merchant
+        SET
+        <if test="username != null and username != ''">
+          username = #{username},
+        </if>
+        <if test="phone != null and phone != ''">
+          phone = #{phone},
+        </if>
+        WHERE phone = #{phone} ;
+    </update>
+    <delete id="delLitemallMerChantByphone">
+        DELETE FROM
+          litemall_merchant
+        WHERE phone = #{phone} ;
+    </delete>
+    <select id="selectOneLitemallMerChantByPhone" resultType="int">
+        SELECT COUNT(0) FROM litemall_merchant
+        where 1=1
+        <if test="phone != null and phone != ''">
+            and phone = #{phone}
+        </if>
+    </select>
+</mapper>

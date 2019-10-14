@@ -1,0 +1,52 @@
+Manifest-Version: 1.0
+Main-Class: org.linlinjava.litemall.Application
+Class-Path: jodd-core-3.7.1.jar okio-1.17.2.jar log4j-to-slf4j-2.11.2.ja
+ r jcl-over-slf4j-1.7.26.jar commons-codec-1.11.jar shiro-core-1.4.0.jar
+  spring-webmvc-5.1.7.RELEASE.jar logback-core-1.2.3.jar HikariCP-3.2.0.
+ jar javax.annotation-api-1.3.2.jar logback-classic-1.2.3.jar spring-jdb
+ c-5.1.7.RELEASE.jar json-20170516.jar weixin-java-common-3.3.0.jar qrco
+ de-utils-1.1.jar guava-20.0.jar httpmime-4.5.8.jar hamcrest-core-1.3.ja
+ r spring-core-5.1.7.RELEASE.jar shiro-config-ogdl-1.4.0.jar aspectjweav
+ er-1.9.4.jar spring-aop-5.1.7.RELEASE.jar shiro-spring-1.4.0.jar spring
+ -boot-2.1.5.RELEASE.jar shiro-config-core-1.4.0.jar jackson-core-2.9.8.
+ jar commons-collections-3.2.2.jar httpclient-4.5.8.jar shiro-lang-1.4.0
+ .jar validation-api-2.0.1.Final.jar guava-18.0.jar springfox-core-2.2.2
+ .jar bcpkix-jdk15on-1.59.jar jackson-databind-2.9.8.jar shiro-crypto-ha
+ sh-1.4.0.jar weixin-java-pay-3.3.0.jar spring-context-5.1.7.RELEASE.jar
+  pagehelper-spring-boot-autoconfigure-1.2.5.jar jackson-datatype-jdk8-2
+ .9.8.jar hibernate-validator-6.0.15.Final.jar jboss-logging-3.3.2.Final
+ .jar ezmorph-1.0.6.jar spring-context-support-5.1.7.RELEASE.jar tomcat-
+ embed-el-9.0.19.jar spring-boot-autoconfigure-2.1.5.RELEASE.jar xmlpull
+ -1.1.3.1.jar jackson-module-parameter-names-2.9.8.jar spring-boot-start
+ er-mail-2.0.4.RELEASE.jar qcloudsms-1.0.5.jar jodd-upload-3.7.1.jar myb
+ atis-spring-boot-starter-1.3.2.jar weixin-java-miniapp-3.3.0.jar activa
+ tion-1.1.jar mapstruct-1.0.0.CR1.jar json-lib-2.4-jdk15.jar commons-io-
+ 2.5.jar spring-web-5.1.7.RELEASE.jar swagger-models-1.5.3.jar mybatis-s
+ pring-1.3.2.jar spring-boot-starter-2.1.5.RELEASE.jar tomcat-embed-webs
+ ocket-9.0.19.jar swagger-annotations-1.5.3.jar bcprov-jdk15on-1.59.jar 
+ commons-collections-3.2.1.jar spring-plugin-metadata-1.2.0.RELEASE.jar 
+ aliyun-sdk-oss-2.5.0.jar jackson-annotations-2.9.0.jar spring-boot-star
+ ter-tomcat-2.1.5.RELEASE.jar spring-expression-5.1.7.RELEASE.jar xpp3_m
+ in-1.1.4c.jar jaxen-1.1.6.jar jsqlparser-1.0.jar springfox-spring-web-2
+ .2.2.jar shiro-event-1.4.0.jar springfox-spi-2.2.2.jar spring-tx-5.1.7.
+ RELEASE.jar cos_api-5.4.4.jar core-3.2.1.jar pagehelper-5.1.4.jar dom4j
+ -2.0.0.jar commons-lang3-3.8.1.jar spring-boot-starter-web-2.1.5.RELEAS
+ E.jar shiro-spring-boot-starter-1.4.0.jar jackson-datatype-jsr310-2.9.8
+ .jar tomcat-embed-core-9.0.19.jar springfox-swagger2-2.2.2.jar druid-sp
+ ring-boot-starter-1.1.10.jar joda-time-2.10.2.jar commons-logging-1.2.j
+ ar shiro-crypto-cipher-1.4.0.jar spring-boot-devtools-2.1.5.RELEASE.jar
+  commons-logging-1.1.1.jar springfox-swagger-ui-2.2.2.jar httpcore-4.4.
+ 11.jar shiro-cache-1.4.0.jar mybatis-spring-boot-autoconfigure-1.3.2.ja
+ r slf4j-api-1.7.26.jar mysql-connector-java-5.1.46.jar spring-hateoas-0
+ .25.1.RELEASE.jar okhttp-3.14.2.jar spring-plugin-core-1.2.0.RELEASE.ja
+ r snakeyaml-1.23.jar junit-4.12.jar shiro-crypto-core-1.4.0.jar pagehel
+ per-spring-boot-starter-1.2.5.jar spring-boot-starter-json-2.0.4.RELEAS
+ E.jar shiro-spring-boot-web-starter-1.4.0.jar jdom-1.1.jar spring-boot-
+ starter-jdbc-2.1.5.RELEASE.jar springfox-schema-2.2.2.jar spring-jcl-5.
+ 1.7.RELEASE.jar spring-beans-5.1.7.RELEASE.jar java-jwt-3.4.1.jar jul-t
+ o-slf4j-1.7.26.jar gson-2.8.5.jar shiro-web-1.4.0.jar springfox-swagger
+ -common-2.2.2.jar javax.mail-1.6.2.jar spring-boot-starter-logging-2.1.
+ 5.RELEASE.jar jodd-http-3.7.1.jar commons-beanutils-1.9.3.jar xstream-1
+ .4.10.jar druid-1.1.10.jar log4j-api-2.11.2.jar aspectjrt-1.9.4.jar cla
+ ssmate-1.4.0.jar qiniu-java-sdk-7.2.25.jar mybatis-3.4.6.jar
+
