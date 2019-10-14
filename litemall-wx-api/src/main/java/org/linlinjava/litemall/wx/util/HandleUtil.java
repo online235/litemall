@@ -4,6 +4,8 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class HandleUtil {
     public static final String HANDLE_MES = "无法进行操作！请检查是否正确！";
@@ -78,10 +80,23 @@ public class HandleUtil {
         LocalDateTime time12 = LocalDateTime.parse(presenttime(),dtf2);
         Duration duration = Duration.between(time1,time12);
         long millis = duration.toMillis();//相差毫秒数
-        if (millis >= 60000)
+        if (millis >= 7*24*60*60000)
             return true;
         else
             return false;
+    }
+
+    public boolean isMatch(String phone){
+        Pattern p = null;
+        Matcher m = null;
+        boolean isMatch = false;
+        //制定验证条件
+        String regex1 = "^[1][3,4,5,7,8][0-9]{9}$";
+        String regex2 = "^((13[0-9])|(14[579])|(15([0-3,5-9]))|(16[6])|(17[0135678])|(18[0-9]|19[89]))\\d{8}$";
+
+        p = Pattern.compile(regex2);
+        m = p.matcher(phone);
+        return isMatch = m.matches();
     }
 
 }

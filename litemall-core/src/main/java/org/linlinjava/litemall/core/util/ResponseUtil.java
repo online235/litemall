@@ -70,7 +70,7 @@ public class ResponseUtil {
 
     public static Object oktotal(Object data,Integer total,Integer pageIndex,Integer pages,Integer limit) {
         Map<String, Object> obj = new HashMap<String, Object>();
-        obj.put("errno", 1);
+        obj.put("errno", 0);
         obj.put("errmsg", "成功");
         obj.put("total",total);
         obj.put("page",pageIndex);

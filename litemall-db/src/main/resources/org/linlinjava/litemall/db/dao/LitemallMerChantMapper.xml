@@ -55,4 +55,40 @@
             and phone = #{phone}
         </if>
     </select>
+
+
+
+
+    <insert id="addMerSmsByPhoneAndCode" parameterType="org.linlinjava.litemall.db.domain.LitemallMerSms">
+        INSERT INTO litemall_mersms (
+          verification_code,
+          phone,
+          createdat,
+          updatedat
+        )
+        VALUES
+          (
+            #{verification_code},
+            #{phone},
+            #{createdat},
+            #{updatedat}
+          ) ;
+    </insert>
+    <update id="updMerSmsByPhoneAndCode" parameterType="org.linlinjava.litemall.db.domain.LitemallMerSms">
+        UPDATE
+          litemall_mersms
+        SET
+          verification_code = #{verification_code},
+          updatedat = #{updatedat}
+        WHERE phone = #{phone} ;
+    </update>
+    <select id="findLitemallMerList" resultType="org.linlinjava.litemall.db.domain.LitemallMerSms">
+        select id,verification_code,phone,createdat,updatedat
+        from litemall_mersms
+        where phone = #{phone}
+        <if test="code != null and code != ''">
+            and verification_code = #{code}
+        </if>
+    </select>
+
 </mapper>

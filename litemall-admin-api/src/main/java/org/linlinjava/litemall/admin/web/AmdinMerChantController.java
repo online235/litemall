@@ -27,10 +27,9 @@ public class AmdinMerChantController {
     @Autowired
     private AdminLitemallMerChantService adminLitemallMerChantService;
 
-//    @RequiresPermissions("admin:merchant:list")
+    @RequiresPermissions("admin:merchant:list")
     @RequiresPermissionsDesc(menu = {"用户管理", "商户管理"}, button = "查询")
-    @RequestMapping("/list")
-    @ResponseBody
+    @GetMapping("/list")
     public Object list(String username, String phone ,
                        @RequestParam(defaultValue = "1") Integer page,
                        @RequestParam(defaultValue = "10") Integer limit){
@@ -42,6 +41,7 @@ public class AmdinMerChantController {
         Integer total = litemallMerChantPager.getRecordCount();
         Integer pageIndex = litemallMerChantPager.getCurentPageIndex();
         Integer pages = litemallMerChantPager.getPageCount();
+        System.out.println(ResponseUtil.oktotal(litemallMerChantPager.getSmallList(),total,pageIndex,pages,limit));
         return ResponseUtil.oktotal(litemallMerChantPager.getSmallList(),total,pageIndex,pages,limit);
     }
 
