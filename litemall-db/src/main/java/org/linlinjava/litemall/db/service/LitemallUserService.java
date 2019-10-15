@@ -10,6 +10,7 @@ import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -131,6 +132,55 @@ public class LitemallUserService {
         }
     }
 
+    public int selectLitemallByphone(String phone){
+        int reuslt = userMapper.selectLitemallByPhone(phone);
+        if(reuslt > 0){
+            return 1;
+        }
+        return 0;
+    }
 
+    public int AddLitemallUser (String phone,String token,String time){
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime localDateTime = LocalDateTime.parse(time,dateTimeFormatter);
+        LitemallUser litemallUser = new LitemallUser();
+        litemallUser.setUsername(phone);
+        litemallUser.setNickname(phone);
+        litemallUser.setMobile(phone);
+        litemallUser.setAddTime(localDateTime);
+        litemallUser.setUpdateTime(localDateTime);
+        litemallUser.setTokencode(token);
+        litemallUser.setTokencreate(time);
+        return userMapper.AddLitemallUser(litemallUser);
+    }
+
+    public LitemallUser LoginPhone(String phone){
+        if(phone != null){
+            return userMapper.LoginPhone(phone);
+        }
+        return null;
+    }
+
+    public int updTokenLitemallUser(String phone,String token ,String time){
+        if(phone.isEmpty()||token.isEmpty()||time.isEmpty()){
+            return 0;
+        }
+            int result = userMapper.updTokenLitemallUser(phone, token, time);
+        if(result > 0)
+            return 1;
+        else
+            return 0;
+    }
+
+    public int updOutLoginLitemallUser(String phone,String token,String username){
+        if(phone == null&&token==null&&username==null){
+            return 0;
+        }
+        int result = userMapper.updOutLoginLitemallUser(phone, token, username);
+        if (result > 0)
+            return 1;
+        else
+            return 0;
+    }
 
 }

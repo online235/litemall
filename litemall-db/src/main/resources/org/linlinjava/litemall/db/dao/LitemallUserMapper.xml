@@ -585,6 +585,8 @@
     update litemall_user set deleted = 1
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
   <select id="selectLitemallLogin" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
@@ -615,9 +617,77 @@
   <update id="updTokenCreate">
     update litemall_user
     <if test="time != null and time != ''">
-      set tokencreate = #{time}
+      set tokencreate = #{time},
+        last_login_time = #{time}
     </if>
     where 1=1
+    <if test="token != null and token != ''">
+      and tokencode = #{token}
+    </if>
+  </update>
+  <insert id="AddLitemallUser" parameterType="org.linlinjava.litemall.db.domain.LitemallUser">
+    INSERT INTO `litemall`.`litemall_user` (
+        `username`,
+        `nickname`,
+        `mobile`,
+        `add_time`,
+        `update_time`,
+        `tokencode`,
+        `tokencreate`
+      )
+      VALUES
+        (
+          #{username},
+          #{nickname},
+          #{mobile},
+          #{addTime},
+          #{updateTime},
+          #{tokencode},
+          #{tokencreate}
+        ) ;
+  </insert>
+  <select id="selectLitemallByPhone" resultType="int">
+    select count(mobile) from litemall_user
+    where mobile = #{phone}
+  </select>
+  <select id="LoginPhone" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from litemall_user
+    where mobile = #{phone}
+  </select>
+  <update id="updTokenLitemallUser">
+    update litemall_user
+      set
+    <if test="phone != null and phone != ''">
+
+    <if test="time != null and time != ''">
+      tokencreate = #{time},
+      last_login_time = #{time},
+    </if>
+    <if test="token != null and token != ''">
+      tokencode = #{token}
+    </if>
+
+
+    </if>
+    where 1=1
+    <if test="phone != null and phone != ''">
+      and mobile = #{phone}
+    </if>
+  </update>
+  <update id="updOutLoginLitemallUser">
+    update litemall_user
+    set
+        tokencreate = NULL,
+        tokencode = NULL
+    where 1=1
+    <if test="phone != null and phone != ''">
+      and mobile = #{phone}
+    </if>
+    <if test="username != null and username != ''">
+      and username = #{username},
+    </if>
     <if test="token != null and token != ''">
       and tokencode = #{token}
     </if>

@@ -1,9 +1,13 @@
 package org.linlinjava.litemall.db.util;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SmsUtil {
+    public static final String DATE_TYPE = "yyyy-MM-dd HH:mm:ss";
+
     public static boolean isMatch(String phone){
         Pattern p = null;
         Matcher m = null;
@@ -15,6 +19,15 @@ public class SmsUtil {
         p = Pattern.compile(regex2);
         m = p.matcher(phone);
         return isMatch = m.matches();
+    }
+    /**
+     * 获取当前日期
+     * @return
+     */
+    public static String presenttime(){
+        LocalDateTime dateTime = LocalDateTime.now();
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern(DATE_TYPE);
+        return dateTime.format(formatter2);
     }
 
 }

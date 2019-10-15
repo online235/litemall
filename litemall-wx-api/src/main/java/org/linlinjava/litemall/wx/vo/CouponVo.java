@@ -1,12 +1,10 @@
 package org.linlinjava.litemall.wx.vo;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Data
 public class CouponVo {
     private Integer id;
     private String name;

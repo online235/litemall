@@ -58,7 +58,7 @@ public class AppXinanService{
         int num = -1;
         if (isMatch && code.equals("")){
             List list = appXinanMapper.findLitemallList(phone,"");
-            if (list.equals("[]")){
+            if (null == list || list.size() ==0 ){
                 num = 0;
                 return num;
             }else{
@@ -66,9 +66,8 @@ public class AppXinanService{
                 return num;
             }
         }else if (isMatch && !code.equals("")){
-            System.out.println(10);
             List list = appXinanMapper.findLitemallList(phone,code);
-            if (list.equals("[]")){
+            if (null == list || list.size() ==0 ){
                 num = 0;
                 return num;
             }else{

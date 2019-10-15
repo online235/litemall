@@ -62,9 +62,16 @@ public class ResponseUtil {
         dataLi.setTokencode(litemallUser.getTokencode());
         dataLi.setUsername(litemallUser.getUsername());
         Map<String, Object> obj = new HashMap<String, Object>();
-        obj.put("errno", 1);
+        obj.put("errno", 0);
         obj.put("errmsg", "成功");
         obj.put("data", dataLi);
+        return obj;
+    }
+    public static Object okAddUser(LitemallUser data) {
+        Map<String, Object> obj = new HashMap<String, Object>();
+        obj.put("errno", 0);
+        obj.put("errmsg", "成功");
+        obj.put("data", data);
         return obj;
     }
 

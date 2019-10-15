@@ -21,10 +21,11 @@ public class LitemallMerSmsService {
      * @return
      */
     public int addSmsByPhoneAndCode(LitemallMerSms sms) {
-        if (sms==null)
+        if (sms==null) {
             return 0;
-        else
+        }else {
             return litemallMerChantMapper.addMerSmsByPhoneAndCode(sms);
+        }
     }
 
     /**
@@ -47,7 +48,8 @@ public class LitemallMerSmsService {
         int num = -1;
         if (SmsUtil.isMatch(phone) && code.equals("")){
             List list = litemallMerChantMapper.findLitemallMerList(phone,"");
-            if (list.equals("[]")){
+            System.out.println(list);
+            if(null == list || list.size() ==0 ){
                 num = 0;
                 return num;
             }else{
@@ -55,9 +57,8 @@ public class LitemallMerSmsService {
                 return num;
             }
         }else if (SmsUtil.isMatch(phone) && !code.equals("")){
-            System.out.println(10);
             List list = litemallMerChantMapper.findLitemallMerList(phone,code);
-            if (list.equals("[]")){
+            if (null == list || list.size() ==0 ){
                 num = 0;
                 return num;
             }else{

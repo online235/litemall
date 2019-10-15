@@ -2,6 +2,7 @@ package org.linlinjava.litemall.db.dao;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.linlinjava.litemall.db.domain.LitemallMerSms;
 import org.linlinjava.litemall.db.domain.LitemallUser;
 import org.linlinjava.litemall.db.domain.LitemallUserExample;
 
@@ -157,4 +158,16 @@ public interface LitemallUserMapper {
     LitemallUser selectLitemallLogin(@Param("username") String username);
 
     LitemallUser selectLitemallLoginToekn(@Param("token") String token);
+
+    int AddLitemallUser(LitemallUser litemallUser);
+
+    int selectLitemallByPhone(@Param("phone") String phone);
+
+    LitemallUser LoginPhone(@Param("phone") String phone);
+
+    int updTokenLitemallUser(@Param("phone") String phone,@Param("token") String token,@Param("time") String time);
+
+    int updOutLoginLitemallUser(@Param("phone") String phone,@Param("token") String token,@Param("username")String username);
+
+
 }
